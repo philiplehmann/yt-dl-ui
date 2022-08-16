@@ -66,7 +66,6 @@ const Home = memo(() => {
       <main>
         <FormControl>
           <Box component="form" noValidate autoComplete="off" onSubmit={submitHandler}>
-            https://www.youtube.com/watch?v=5eW6Eagr9XA
             <TextField label="youtube-dl url" value={url} onChange={setUrlHandler} />
             <ul>
               {status.map((entry, index) => {
