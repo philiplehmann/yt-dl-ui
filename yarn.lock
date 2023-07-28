@@ -3966,36 +3966,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"staking@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "staking@workspace:."
-  dependencies:
-    "@emotion/cache": ^11.11.0
-    "@emotion/react": ^11.11.1
-    "@emotion/server": ^11.11.0
-    "@emotion/styled": ^11.11.0
-    "@fontsource/roboto": ^5.0.5
-    "@mui/icons-material": ^5.14.1
-    "@mui/material": ^5.14.2
-    "@types/node": ^18.17.1
-    "@typescript-eslint/eslint-plugin": ^6.2.0
-    "@typescript-eslint/parser": ^6.2.0
-    date-fns: ^2.30.0
-    eslint: ^8.45.0
-    eslint-config-next: ^13.4.12
-    eslint-plugin-prettier: ^5.0.0
-    eslint-plugin-react: ^7.33.0
-    next: 13.4.12
-    prettier: ^3.0.0
-    react: 18.2.0
-    react-dom: 18.2.0
-    socket.io: ^4.7.1
-    socket.io-client: ^4.7.1
-    socket.io-parser: ^4.2.4
-    typescript: ^5.1.6
-  languageName: unknown
-  linkType: soft
-
 "streamsearch@npm:^1.1.0":
   version: 1.1.0
   resolution: "streamsearch@npm:1.1.0"
@@ -4515,6 +4485,36 @@ __metadata:
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
   languageName: node
   linkType: hard
+
+"yt-dl-ui@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "yt-dl-ui@workspace:."
+  dependencies:
+    "@emotion/cache": ^11.11.0
+    "@emotion/react": ^11.11.1
+    "@emotion/server": ^11.11.0
+    "@emotion/styled": ^11.11.0
+    "@fontsource/roboto": ^5.0.5
+    "@mui/icons-material": ^5.14.1
+    "@mui/material": ^5.14.2
+    "@types/node": ^18.17.1
+    "@typescript-eslint/eslint-plugin": ^6.2.0
+    "@typescript-eslint/parser": ^6.2.0
+    date-fns: ^2.30.0
+    eslint: ^8.45.0
+    eslint-config-next: ^13.4.12
+    eslint-plugin-prettier: ^5.0.0
+    eslint-plugin-react: ^7.33.0
+    next: 13.4.12
+    prettier: ^3.0.0
+    react: 18.2.0
+    react-dom: 18.2.0
+    socket.io: ^4.7.1
+    socket.io-client: ^4.7.1
+    socket.io-parser: ^4.2.4
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
 
 "zod@npm:3.21.4":
   version: 3.21.4
