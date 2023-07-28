@@ -1,4 +1,4 @@
-FROM bitnami/node:18
+FROM bitnami/node:20
 
 ENV PORT=8080
 ENV NODE_ENV=production
