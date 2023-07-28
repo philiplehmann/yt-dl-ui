@@ -1,12 +1,13 @@
-import youtube_dl from '../../helpers/youtube_dl'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { getYoutubeDL } from 'helpers/extend_socket';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface RequestBody {
-  url: string
+  url: string;
 }
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  const { url } = req.body as RequestBody
-  ;(res.socket as any).server.youtubeDL.add(url)
-  res.end()
-}
+  const { url } = req.body as RequestBody;
+  const [youtubeDL] = getYoutubeDL(res.socket);
+  youtubeDL.add(url);
+  res.end();
+};

@@ -1,21 +1,21 @@
-import React, { useState, useCallback, memo, useEffect, ChangeEventHandler } from 'react'
-import Head from 'next/head'
-import { Box } from '@mui/material'
-import { io } from 'socket.io-client'
+import React, { useState, useCallback, memo, useEffect, ChangeEventHandler } from 'react';
+import Head from 'next/head';
+import { Box } from '@mui/material';
+import { io } from 'socket.io-client';
 
-import { FormControl, TextField } from '@mui/material'
-import type { YoutubeDLQueue } from 'helpers/youtube_dl'
+import { FormControl, TextField } from '@mui/material';
+import type { YoutubeDLQueue } from 'helpers/youtube_dl';
 
 const Home = memo(() => {
-  const [url, setUrl] = useState('')
-  const [status, setStatus] = useState<YoutubeDLQueue[]>([])
+  const [url, setUrl] = useState('');
+  const [status, setStatus] = useState<YoutubeDLQueue[]>([]);
 
   const setUrlHandler = useCallback(
     (event) => {
-      setUrl(event.target.value)
+      setUrl(event.target.value);
     },
     [setUrl]
-  ) as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
+  ) as ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 
   const submitHandler = useCallback(
     (event) => {
@@ -27,13 +27,13 @@ const Home = memo(() => {
           method: 'POST',
           cache: 'no-cache',
           body: JSON.stringify({ url: newUrl })
-        })
-        return ''
-      })
-      event.preventDefault()
+        });
+        return '';
+      });
+      event.preventDefault();
     },
     [setUrl]
-  )
+  );
 
   useEffect(() => {
     fetch('/api/status', {
@@ -43,17 +43,17 @@ const Home = memo(() => {
       method: 'GET',
       cache: 'no-cache'
     }).then(() => {
-      const socket = io()
+      const socket = io();
 
       socket.on('connect', () => {
         // eslint-disable-next-line no-console
-        console.log('connected')
+        console.log('connected');
         socket.on('status', (data) => {
-          setStatus(data)
-        })
-      })
-    })
-  }, [setStatus])
+          setStatus(data);
+        });
+      });
+    });
+  }, [setStatus]);
 
   return (
     <div>
@@ -73,15 +73,15 @@ const Home = memo(() => {
                   <li key={index}>
                     {entry.url}: <span style={{ whiteSpace: 'pre' }}>{entry.data}</span>
                   </li>
-                )
+                );
               })}
             </ul>
           </Box>
         </FormControl>
       </main>
     </div>
-  )
-})
-Home.displayName = 'Home'
+  );
+});
+Home.displayName = 'Home';
 
-export default Home
+export default Home;
