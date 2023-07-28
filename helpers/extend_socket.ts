@@ -1,11 +1,8 @@
-import YoutubeDL from './youtube_dl';
-import { Server as IOServer } from 'socket.io';
 import { Socket } from 'node:net';
-
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { DefaultEventsMap } from 'socket.io/dist/typed-events';
-import type { Socket as IOSocket } from 'socket.io';
 import { Server } from 'node:http';
+import YoutubeDL from './youtube_dl';
+import { Server as IOServer, type Socket as IOSocket } from 'socket.io';
+import type { DefaultEventsMap } from 'socket.io/dist/typed-events';
 
 export type SocketWithYoutubeDL = Socket & {
   server: Server & {

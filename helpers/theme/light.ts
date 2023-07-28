@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles';
 
 const lightTheme = createTheme({
   palette: {
@@ -11,6 +11,6 @@ const lightTheme = createTheme({
       }
     }
   }
-})
+});
 
-export default lightTheme
+export default lightTheme;
