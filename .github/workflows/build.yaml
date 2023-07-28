@@ -129,10 +129,9 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile_base
+          file: Dockerfile
           platforms: linux/amd64,linux/arm64
           build-args: |
-            NPM_TOKEN=${{ secrets.NPM_TOKEN }}
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           push: true
           cache-from: type=registry,ref=philiplehmann/youtube-dl-frontend:buildcache
