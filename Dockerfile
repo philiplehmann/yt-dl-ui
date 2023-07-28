@@ -1,4 +1,4 @@
-FROM node:18
+FROM bitnami/node:18
 
 ENV PORT=8080
 ENV NODE_ENV=production
@@ -19,5 +19,4 @@ RUN chmod +x /usr/local/bin/docker-entrypoint
 
 ENTRYPOINT ["docker-entrypoint"]
 
-CMD ["yarn", "start"]
-
+CMD ["node", "node_modules/.bin/next", "start"]

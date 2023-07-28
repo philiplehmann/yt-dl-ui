@@ -1,0 +1,142 @@
+name: test, build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.ref }}
+#   cancel-in-progress: true
+
+jobs:
+  ci:
+    # runs-on: self-hosted
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.5.0]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules
+      - name: Cache .yarn
+        id: cache-dot-yarn
+        uses: actions/cache@v3
+        with:
+          path: .yarn
+          key: ${{ runner.os }}-dot-yarn
+      - name: Cache .next
+        id: cache-dot-next
+        uses: actions/cache@v3
+        with:
+          path: .next
+          key: ${{ runner.os }}-dot-next
+      - name: Cache .eslintcache
+        id: cache-dot-eslintcache
+        uses: actions/cache@v3
+        with:
+          path: .eslintcache
+          key: ${{ runner.os }}-dot-eslintcache
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          always-auth: true
+          registry-url: https://npm.pkg.github.com
+          scope: "@datage-ch"
+      - name: install dependencies
+        run: |
+          npm install -g yarn
+          yarn install
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN }}
+      - name: yarn audit
+        run: yarn npm audit
+      - name: lint
+        run: yarn lint:js
+      - name: typecheck
+        run: yarn lint:types
+      - name: build
+        run: yarn build
+        if: github.ref != 'refs/heads/main'
+
+  build:
+    # runs-on: self-hosted
+    runs-on: ubuntu-latest
+    outputs:
+      TAG_VERSION: ${{ steps.version.outputs.TAG_VERSION }}
+    if: github.ref == 'refs/heads/main'
+    needs: ci
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules
+      - name: Cache .yarn
+        id: cache-dot-yarn
+        uses: actions/cache@v3
+        with:
+          path: .yarn
+          key: ${{ runner.os }}-dot-yarn
+      - name: Cache .next
+        id: cache-dot-next
+        uses: actions/cache@v3
+        with:
+          path: .next
+          key: ${{ runner.os }}-dot-next
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: arm64
+      - name: Set up Docker Context for Buildx
+        id: buildx-context
+        run: |
+          docker context create builders
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
+        with:
+          version: latest
+          install: true
+          endpoint: builders
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - id: version
+        name: set version
+        run: |
+          echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+          echo "TAG_VERSION=$(date +'%y-%m-%d').$GITHUB_RUN_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Build and push base
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile_base
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          push: true
+          cache-from: type=registry,ref=philiplehmann/youtube-dl-frontend:buildcache
+          cache-to: type=registry,ref=philiplehmann/youtube-dl-frontend:buildcache,mode=max
+          tags: |
+            philiplehmann/youtube-dl-frontend/youtube-dl-frontend:latest
+            philiplehmann/youtube-dl-frontend/youtube-dl-frontend:${{ env.TAG_VERSION }}
