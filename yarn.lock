@@ -469,22 +469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/utils@npm:^5.13.7":
-  version: 5.14.1
-  resolution: "@mui/utils@npm:5.14.1"
-  dependencies:
-    "@babel/runtime": ^7.22.6
-    "@types/prop-types": ^15.7.5
-    "@types/react-is": ^18.2.1
-    prop-types: ^15.8.1
-    react-is: ^18.2.0
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-  checksum: 39b1ab8d428f1783d0f7621b4ab284f7d035920c43c527114d865ba2d7d467ead850528a042ea986b76d4bac1ad6fc9cb0541add0d17d29d5ad59460c69106d1
-  languageName: node
-  linkType: hard
-
-"@mui/utils@npm:^5.14.3":
+"@mui/utils@npm:^5.13.7, @mui/utils@npm:^5.14.3":
   version: 5.14.3
   resolution: "@mui/utils@npm:5.14.3"
   dependencies:
@@ -726,13 +711,13 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:*":
-  version: 18.2.17
-  resolution: "@types/react@npm:18.2.17"
+  version: 18.2.18
+  resolution: "@types/react@npm:18.2.18"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 150516b31bd98b635e4a56bcf2af007330b35cccb6e35e902f46a47f0e81e30c46cdacc095e91051bdf2f33e4846e7e62fd51b67e064dc7d15c00e15dfa449d5
+  checksum: 2e0d75de2b618e76780019e52478b1bec2b015a9187aea30f84518c0c3ddc639055bdfea50864aece937bad0cb0544d0100b80d30f5461e72fbc1c3c0be8b140
   languageName: node
   linkType: hard
 
@@ -1243,9 +1228,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001406":
-  version: 1.0.30001517
-  resolution: "caniuse-lite@npm:1.0.30001517"
-  checksum: e4e87436ae1c4408cf4438aac22902b31eb03f3f5bad7f33bc518d12ffb35f3fd9395ccf7efc608ee046f90ce324ec6f7f26f8a8172b8c43c26a06ecee612a29
+  version: 1.0.30001519
+  resolution: "caniuse-lite@npm:1.0.30001519"
+  checksum: 66085133ede05d947e30b62fed2cbae18e5767afda8b0de38840883e1cfe5846bf1568ddbafd31647544e59112355abedaf9c867ac34541bfc20d69e7a19d94c
   languageName: node
   linkType: hard
 
@@ -1701,13 +1686,13 @@ __metadata:
   linkType: hard
 
 "eslint-import-resolver-node@npm:^0.3.6, eslint-import-resolver-node@npm:^0.3.7":
-  version: 0.3.7
-  resolution: "eslint-import-resolver-node@npm:0.3.7"
+  version: 0.3.8
+  resolution: "eslint-import-resolver-node@npm:0.3.8"
   dependencies:
     debug: ^3.2.7
-    is-core-module: ^2.11.0
-    resolve: ^1.22.1
-  checksum: 3379aacf1d2c6952c1b9666c6fa5982c3023df695430b0d391c0029f6403a7775414873d90f397e98ba6245372b6c8960e16e74d9e4a3b0c0a4582f3bdbe3d6e
+    is-core-module: ^2.13.0
+    resolve: ^1.22.4
+  checksum: 5769ebec976d1145957f5d87ee05b6e880cd3fbeb001a43b7a6e6a03b303d9b253b37ca296277f228159a0bbb690638c2e4b3a573dd4d6753b8f28ff85dbe192
   languageName: node
   linkType: hard
 
@@ -2489,12 +2474,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.11.0, is-core-module@npm:^2.12.0, is-core-module@npm:^2.12.1, is-core-module@npm:^2.9.0":
-  version: 2.12.1
-  resolution: "is-core-module@npm:2.12.1"
+"is-core-module@npm:^2.11.0, is-core-module@npm:^2.12.1, is-core-module@npm:^2.13.0, is-core-module@npm:^2.9.0":
+  version: 2.13.0
+  resolution: "is-core-module@npm:2.13.0"
   dependencies:
     has: ^1.0.3
-  checksum: f04ea30533b5e62764e7b2e049d3157dc0abd95ef44275b32489ea2081176ac9746ffb1cdb107445cf1ff0e0dfcad522726ca27c27ece64dadf3795428b8e468
+  checksum: 053ab101fb390bfeb2333360fd131387bed54e476b26860dc7f5a700bbf34a0ec4454f7c8c4d43e8a0030957e4b3db6e16d35e1890ea6fb654c833095e040355
   languageName: node
   linkType: hard
 
@@ -3440,16 +3425,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.19.0, resolve@npm:^1.22.1, resolve@npm:^1.22.3":
-  version: 1.22.3
-  resolution: "resolve@npm:1.22.3"
+"resolve@npm:^1.19.0, resolve@npm:^1.22.3, resolve@npm:^1.22.4":
+  version: 1.22.4
+  resolution: "resolve@npm:1.22.4"
   dependencies:
-    is-core-module: ^2.12.0
+    is-core-module: ^2.13.0
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: fb834b81348428cb545ff1b828a72ea28feb5a97c026a1cf40aa1008352c72811ff4d4e71f2035273dc536dcfcae20c13604ba6283c612d70fa0b6e44519c374
+  checksum: 23f25174c2736ce24c6d918910e0d1f89b6b38fefa07a995dff864acd7863d59a7f049e691f93b4b2ee29696303390d921552b6d1b841ed4a8101f517e1d0124
   languageName: node
   linkType: hard
 
@@ -3466,16 +3451,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.3#~builtin<compat/resolve>":
-  version: 1.22.3
-  resolution: "resolve@patch:resolve@npm%3A1.22.3#~builtin<compat/resolve>::version=1.22.3&hash=c3c19d"
+"resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.3#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.4#~builtin<compat/resolve>":
+  version: 1.22.4
+  resolution: "resolve@patch:resolve@npm%3A1.22.4#~builtin<compat/resolve>::version=1.22.4&hash=c3c19d"
   dependencies:
-    is-core-module: ^2.12.0
+    is-core-module: ^2.13.0
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: ad59734723b596d0891321c951592ed9015a77ce84907f89c9d9307dd0c06e11a67906a3e628c4cae143d3e44898603478af0ddeb2bba3f229a9373efe342665
+  checksum: c45f2545fdc4d21883861b032789e20aa67a2f2692f68da320cc84d5724cd02f2923766c5354b3210897e88f1a7b3d6d2c7c22faeead8eed7078e4c783a444bc
   languageName: node
   linkType: hard
 
