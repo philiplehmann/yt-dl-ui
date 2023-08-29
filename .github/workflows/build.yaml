@@ -134,8 +134,8 @@ jobs:
           build-args: |
             GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           push: true
-          cache-from: type=registry,ref=philiplehmann/youtube-dl-frontend:buildcache
-          cache-to: type=registry,ref=philiplehmann/youtube-dl-frontend:buildcache,mode=max
+          cache-from: type=registry,ref=philiplehmann/yt-dl-ui:buildcache
+          cache-to: type=registry,ref=philiplehmann/yt-dl-ui:buildcache,mode=max
           tags: |
-            philiplehmann/youtube-dl-frontend/youtube-dl-frontend:latest
-            philiplehmann/youtube-dl-frontend/youtube-dl-frontend:${{ env.TAG_VERSION }}
+            philiplehmann/yt-dl-ui/yt-dl-ui:latest
+            philiplehmann/yt-dl-ui/yt-dl-ui:${{ env.TAG_VERSION }}
