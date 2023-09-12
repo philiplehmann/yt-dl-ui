@@ -99,7 +99,7 @@ jobs:
           path: .next
           key: ${{ runner.os }}-dot-next
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
         with:
           platforms: arm64
       - name: Set up Docker Context for Buildx
