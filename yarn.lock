@@ -56,7 +56,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.23.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
   version: 7.23.6
   resolution: "@babel/runtime@npm:7.23.6"
   dependencies:
@@ -1359,12 +1359,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: e4b521fbf22bc8c3db332bbfb7b094fd3e7627de0259a9d17c7551e2d2702608a7307a449206065916538e384f37b181565447ce2637ae09828427aed9cb5581
+"date-fns@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "date-fns@npm:3.0.0"
+  checksum: 61a2b24df5a963a451fdce729402ba4c4634aa7e758a0f8467c498b46040e7d238591effd7da289ef0d08a57d1100886ca01b40c6cff26faa6daff53c2e91bbd
   languageName: node
   linkType: hard
 
@@ -4325,7 +4323,7 @@ __metadata:
     "@types/node": "npm:^20.0.0"
     "@typescript-eslint/eslint-plugin": "npm:^6.2.0"
     "@typescript-eslint/parser": "npm:^6.2.0"
-    date-fns: "npm:^2.30.0"
+    date-fns: "npm:^3.0.0"
     eslint: "npm:^8.45.0"
     eslint-config-next: "npm:^14.0.0"
     eslint-plugin-prettier: "npm:^5.0.0"
