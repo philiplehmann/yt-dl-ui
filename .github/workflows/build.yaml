@@ -24,25 +24,25 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Cache node_modules
         id: cache-node-modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules
       - name: Cache .yarn
         id: cache-dot-yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .yarn
           key: ${{ runner.os }}-dot-yarn
       - name: Cache .next
         id: cache-dot-next
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .next
           key: ${{ runner.os }}-dot-next
       - name: Cache .eslintcache
         id: cache-dot-eslintcache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .eslintcache
           key: ${{ runner.os }}-dot-eslintcache
@@ -82,19 +82,19 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - name: Cache node_modules
         id: cache-node-modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules
       - name: Cache .yarn
         id: cache-dot-yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .yarn
           key: ${{ runner.os }}-dot-yarn
       - name: Cache .next
         id: cache-dot-next
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .next
           key: ${{ runner.os }}-dot-next
