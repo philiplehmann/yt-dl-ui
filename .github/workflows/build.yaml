@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "**"
+      - '**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.event.pull_request.number || github.ref }}
@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.8.1]
+        node-version: [20.12.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -50,10 +50,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
           always-auth: true
           registry-url: https://npm.pkg.github.com
-          scope: "@datage-ch"
+          scope: '@datage-ch'
       - name: install dependencies
         run: |
           npm install -g yarn
